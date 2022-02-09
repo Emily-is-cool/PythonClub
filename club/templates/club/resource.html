@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Python Club</h2>
+<p>Welcome to Python Club!</p>
+<ul>
+    {% for r in resource_list %}
+      <li>{{r.resourcetitle}}</li>
+{% endblock %}
