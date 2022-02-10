@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from club.views import meetingview, resourceview
+
 from .models import meeting, resource, meetingminute, event
 
 # Register your models here.

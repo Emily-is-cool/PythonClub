@@ -35,7 +35,7 @@ class resource(models.Model):
     resourcedescription=models.TextField()
 
     def __str__(self):
-        return self.resourceview
+        return self.resourcename
 
     class Meta:
         db_table='resource'
@@ -48,7 +48,7 @@ class event(models.Model):
     userid=models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.eventdate
+        return self.eventname
 
     class Meta:
         db_table='event'
