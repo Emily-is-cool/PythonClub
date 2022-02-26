@@ -15,6 +15,6 @@ def meetingview(request):
     meeting_list=meeting.objects.all()
     return render(request, 'club/meetings.html', {'meeting_list' : meeting_list})
 
-def meeting_min(request, id):
+def meetingmin(request, id):
     meet=get_object_or_404(meeting, pk=id)
     return render(request, 'club/meetingminutes.html', {'meet' : meet})
