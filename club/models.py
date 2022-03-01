@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class meeting(models.Model):
     meetingtitle=models.CharField(max_length=220)
     meetingdate=models.DateField()
-    meetingtime=models.DateTimeField()
+    meetingtime=models.TimeField()
     meetinglocation=models.CharField(max_length=254)
     agenda=models.TextField()
 

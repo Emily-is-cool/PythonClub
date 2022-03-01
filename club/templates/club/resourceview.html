@@ -1,0 +1,12 @@
+<!--set up a way to look at the resources. This may not have been assigned yet-->
+
+ {% extends 'base.html'%}
+{% block content %}
+<h2>Check it out!</h2>
+<p>Name: {{resource_view.resourcename}}</p>
+<p>Resource Type: {{resource_view.resourcetype}} </p>
+<p>URL: {{resource_view.resourceurl}} </p>
+<p>Description: {{resource_view.resourcedescription}} </p>
+
+
+{% endblock %}
