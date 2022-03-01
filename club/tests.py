@@ -1,8 +1,11 @@
 from django.test import TestCase
+
+from club.forms import resourceForm
 from .models import event, resource, meeting, meetingminute
 import datetime
 from .views import index, getresource, meetingview, meetingmin
 from django.urls import reverse
+from .forms import resourceForm, meetingForm
 
 
 # Create your tests here.
@@ -52,5 +55,28 @@ class IndexTest(TestCase):
 
 class ResourceTest(TestCase):
     def test_view_url_accessible_by_name(self):
-       response = self.client.get(reverse('Resources'))
+       response = self.client.get(reverse('resources'))
        self.assertEqual(response.status_code, 200) #FAIL
+
+class ResourceFormTest(TestCase):
+    def test_resourceForm(self):
+        form=resourceForm (data={
+            'resourcename' : 'Meow', 
+            'resourcetype':'Meow', 
+            'resourceurl': 'http://meow.com', 
+            'dateentered': '2022-2-2', 
+            'resourcedescription': 'meow', 
+            'userid': 1
+            })
+        self.assertFalse(form.is_valid())
+
+class meetingFormTest(TestCase):
+    def test_meetingForm(self):
+        form=meetingForm (data={
+            'meetingtitle': 'meow',
+            'meetingdate': '2022-8-4',
+            'meetingtime': '1:00',
+            'meetinglocation': 'meow',
+            'agenda': 'meow'
+            })
+        self.assertTrue(form.is_valid())
