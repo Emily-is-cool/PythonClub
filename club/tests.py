@@ -80,3 +80,4 @@ class meetingFormTest(TestCase):
             'agenda': 'meow'
             })
         self.assertTrue(form.is_valid())
+
